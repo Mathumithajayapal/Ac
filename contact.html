@@ -62,16 +62,20 @@
         <li><a href="delivery.html" class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">Filter Delivery</a></li>
         <li><a href="maintenance.html" class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">AC Maintenance</a></li>
         <li><a href="booking.html" class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">Booking</a></li>
-        <li><a href="faq.html" class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">Faq</a></li>
          <li>
           <a href="contact.html" class="text-primary-500 font-bold py-2 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary-500 after:rounded-full">Contact</a>
         </li>
       </ul>
       
-      <div class="hidden xl:flex items-center gap-3">
-        <a href="login.html" class="px-5 py-1.5 border-[1.5px] border-primary-500 text-primary-500 rounded-full text-sm font-semibold hover:bg-primary-500 hover:text-white transition-colors">Login</a>
-        <button id="darkToggleBtn" class="w-9 h-9 flex items-center justify-center border-[1.5px] border-primary-500 text-primary-500 rounded-full hover:bg-primary-500 hover:text-white transition-colors">🌙</button>
-        <button id="rtlToggleBtn" class="w-9 h-9 flex items-center justify-center border-[1.5px] border-primary-500 text-primary-500 rounded-full text-sm font-bold hover:bg-primary-500 hover:text-white transition-colors">LTR</button>
+    <div class="hidden xl:flex items-center gap-3">
+      
+        <button id="darkToggleBtn"
+          class="w-9 h-9 flex items-center justify-center border-[1.5px] border-primary-500 text-primary-500 rounded-full hover:bg-primary-500 hover:text-white transition-all duration-300">
+          <i class="fa-solid fa-moon"></i>
+        </button> <button id="rtlToggleBtn"
+          class="w-9 h-9 flex items-center justify-center border-[1.5px] border-primary-500 text-primary-500 rounded-full text-sm font-bold hover:bg-primary-500 hover:text-white transition-colors">LTR</button>
+            <a href="login.html"
+          class="px-5 py-1.5 border-[1.5px] border-primary-500 text-primary-500 rounded-full text-sm font-semibold hover:bg-primary-500 hover:text-white transition-colors">Login</a>
       </div>
       
       <button id="hamburgerBtn" class="xl:hidden flex flex-col justify-between w-7 h-5 focus:outline-none">
@@ -123,7 +127,7 @@
     </ul>
   </div>
 
-  <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-cover bg-center" style="background-image: url('images/ac (1).jpg');">
+  <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-cover bg-center" style="background-image: url('images/stateof the art dispatch.jpg');">
     <div class="absolute inset-0 bg-slate-900/60"></div>
     <div class="relative z-10 text-center p-6 md:p-12 w-full max-w-4xl">
       <div class="backdrop-blur-md bg-black/50 border border-white/20 rounded-[40px] p-10 md:p-14 shadow-2xl">
@@ -354,8 +358,17 @@
       
       const darkToggle = document.getElementById('darkToggleBtn');
       const mobileDark = document.getElementById('mobileDarkToggle');
-      if(darkToggle) darkToggle.innerHTML = isDark ? '☀️' : '🌙';
-      if(mobileDark) mobileDark.innerHTML = isDark ? '☀️ Light' : '🌙 Dark';
+     if (darkToggle) {
+    darkToggle.innerHTML = isDark
+        ? '<i class="fa-solid fa-sun"></i>'
+        : '<i class="fa-solid fa-moon"></i>';
+}
+
+if (mobileDark) {
+    mobileDark.innerHTML = isDark
+        ? '<i class="fa-solid fa-sun"></i> Light'
+        : '<i class="fa-solid fa-moon"></i> Dark';
+}
     }
 
     document.getElementById('darkToggleBtn')?.addEventListener('click', () => {

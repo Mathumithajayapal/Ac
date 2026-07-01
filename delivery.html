@@ -61,14 +61,18 @@
         </li>
         <li><a href="maintenance.html" class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">AC Maintenance</a></li>
         <li><a href="booking.html" class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">Booking</a></li>
-        <li><a href="faq.html" class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">Faq</a></li>
          <li><a href="contact.html" class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">Contact</a></li>
       </ul>
       
-      <div class="hidden xl:flex items-center gap-3">
-        <a href="login.html" class="px-5 py-1.5 border-[1.5px] border-primary-500 text-primary-500 rounded-full text-sm font-semibold hover:bg-primary-500 hover:text-white transition-colors">Login</a>
-        <button id="darkToggleBtn" class="w-9 h-9 flex items-center justify-center border-[1.5px] border-primary-500 text-primary-500 rounded-full hover:bg-primary-500 hover:text-white transition-colors">🌙</button>
-        <button id="rtlToggleBtn" class="w-9 h-9 flex items-center justify-center border-[1.5px] border-primary-500 text-primary-500 rounded-full text-sm font-bold hover:bg-primary-500 hover:text-white transition-colors">LTR</button>
+    <div class="hidden xl:flex items-center gap-3">
+      
+        <button id="darkToggleBtn"
+          class="w-9 h-9 flex items-center justify-center border-[1.5px] border-primary-500 text-primary-500 rounded-full hover:bg-primary-500 hover:text-white transition-all duration-300">
+          <i class="fa-solid fa-moon"></i>
+        </button> <button id="rtlToggleBtn"
+          class="w-9 h-9 flex items-center justify-center border-[1.5px] border-primary-500 text-primary-500 rounded-full text-sm font-bold hover:bg-primary-500 hover:text-white transition-colors">LTR</button>
+            <a href="login.html"
+          class="px-5 py-1.5 border-[1.5px] border-primary-500 text-primary-500 rounded-full text-sm font-semibold hover:bg-primary-500 hover:text-white transition-colors">Login</a>
       </div>
       
       <button id="hamburgerBtn" class="xl:hidden flex flex-col justify-between w-7 h-5 focus:outline-none">
@@ -102,7 +106,6 @@
       <li class="border-b border-gray-200 dark:border-darkBorder"><a href="service.html" class="block py-3 text-lg font-medium text-gray-900 dark:text-white">Services</a></li>
       <li class="border-b border-gray-200 dark:border-darkBorder"><a href="delivery.html" class="block py-3 text-lg font-bold text-primary-500">Filter Delivery</a></li>
       <li class="border-b border-gray-200 dark:border-darkBorder"><a href="maintenance.html" class="block py-3 text-lg font-medium text-gray-900 dark:text-white">AC Maintenance</a></li>
-      <li class="border-b border-gray-200 dark:border-darkBorder"><a href="faq.html" class="block py-3 text-lg font-medium text-gray-900 dark:text-white">Faq</a></li>
       <li class="border-b border-gray-200 dark:border-darkBorder"><a href="booking.html" class="block py-3 text-lg font-medium text-gray-900 dark:text-white">Booking</a></li>
       <li class="border-b border-gray-200 dark:border-darkBorder"><a href="contact.html" class="block py-3 text-lg font-medium text-gray-900 dark:text-white">Contact</a></li>
       
@@ -122,7 +125,7 @@
   </div>
 
   <!-- Hero Section -->
-  <section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-cover bg-center" style="background-image: url('images/ac (2).jpg');">
+  <section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-cover bg-center" style="background-image: url('images/ac filter delivery.jpg');">
     <div class="absolute inset-0 bg-slate-900/80"></div>
     <div class="relative z-10 text-center p-6 w-full max-w-4xl">
       <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6">Automated Filter Delivery</h1>
@@ -143,15 +146,15 @@
         
         <script>
           const items = [
-            { t: "Allergen Defense", m: "MERV 13", e: "95% Efficiency", img: "images/ac (13).jpg" },
-            { t: "Pet Dander Pro", m: "MERV 11", e: "90% Efficiency", img: "images/ac (8).jpg" },
-            { t: "Odor Neutralizer", m: "Carbon", e: "Active Scrub", img: "images/ac (6).jpg" },
-            { t: "Dust Specialist", m: "MERV 8", e: "85% Efficiency", img: "images/ac (5).jpg" },
-            { t: "Smoke Shield", m: "MERV 14", e: "98% Efficiency", img: "images/ac (4).jpg" },
-            { t: "Virus Guard", m: "HEPA", e: "99.9% Efficiency", img: "images/ac (11).jpg" },
-            { t: "High Flow", m: "MERV 6", e: "75% Efficiency", img: "images/ac (12).jpg" },
-            { t: "Custom Size", m: "Varies", e: "Custom Fit", img: "images/ac (1).jpg" },
-            { t: "Commercial Heavy", m: "MERV 15", e: "99% Efficiency", img: "images/ac (3).jpg" }
+            { t: "Allergen Defense", m: "MERV 13", e: "95% Efficiency", img: "images/Allergen Defense.jpg" },
+            { t: "Pet Dander Pro", m: "MERV 11", e: "90% Efficiency", img: "images/Pet Dander Pro.jpg" },
+            { t: "Odor Neutralizer", m: "Carbon", e: "Active Scrub", img: "images/Odor Neutralizer.jpg" },
+            { t: "Dust Specialist", m: "MERV 8", e: "85% Efficiency", img: "images/Dust Specialist.jpg" },
+            { t: "Smoke Shield", m: "MERV 14", e: "98% Efficiency", img: "images/Smoke Shield.jpg" },
+            { t: "Virus Guard", m: "HEPA", e: "99.9% Efficiency", img: "images/Allergen Defense.jpg" },
+            { t: "High Flow", m: "MERV 6", e: "75% Efficiency", img: "images/indoor.jpg" },
+            { t: "Custom Size", m: "Varies", e: "Custom Fit", img: "images/indoor.jpg" },
+            { t: "Commercial Heavy", m: "MERV 15", e: "99% Efficiency", img: "images/commercial service.jpg" }
           ];
           
           items.forEach(item => {
@@ -253,8 +256,17 @@
       
       const darkToggle = document.getElementById('darkToggleBtn');
       const mobileDark = document.getElementById('mobileDarkToggle');
-      if(darkToggle) darkToggle.innerHTML = isDark ? '☀️' : '🌙';
-      if(mobileDark) mobileDark.innerHTML = isDark ? '☀️ Light' : '🌙 Dark';
+     if (darkToggle) {
+    darkToggle.innerHTML = isDark
+        ? '<i class="fa-solid fa-sun"></i>'
+        : '<i class="fa-solid fa-moon"></i>';
+}
+
+if (mobileDark) {
+    mobileDark.innerHTML = isDark
+        ? '<i class="fa-solid fa-sun"></i> Light'
+        : '<i class="fa-solid fa-moon"></i> Dark';
+}
     }
 
     document.getElementById('darkToggleBtn')?.addEventListener('click', () => {

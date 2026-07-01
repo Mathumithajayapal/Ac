@@ -65,14 +65,18 @@
         <li>
           <a href="booking.html" class="text-primary-500 font-bold py-2 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary-500 after:rounded-full">Booking</a>
         </li>
-        <li><a href="faq.html" class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">Faq</a></li>
         <li><a href="contact.html" class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">Contact</a></li>
       </ul>
       
-      <div class="hidden xl:flex items-center gap-3">
-        <a href="login.html" class="px-5 py-1.5 border-[1.5px] border-primary-500 text-primary-500 rounded-full text-sm font-semibold hover:bg-primary-500 hover:text-white transition-colors">Login</a>
-        <button id="darkToggleBtn" class="w-9 h-9 flex items-center justify-center border-[1.5px] border-primary-500 text-primary-500 rounded-full hover:bg-primary-500 hover:text-white transition-colors">🌙</button>
-        <button id="rtlToggleBtn" class="w-9 h-9 flex items-center justify-center border-[1.5px] border-primary-500 text-primary-500 rounded-full text-sm font-bold hover:bg-primary-500 hover:text-white transition-colors">LTR</button>
+    <div class="hidden xl:flex items-center gap-3">
+      
+        <button id="darkToggleBtn"
+          class="w-9 h-9 flex items-center justify-center border-[1.5px] border-primary-500 text-primary-500 rounded-full hover:bg-primary-500 hover:text-white transition-all duration-300">
+          <i class="fa-solid fa-moon"></i>
+        </button> <button id="rtlToggleBtn"
+          class="w-9 h-9 flex items-center justify-center border-[1.5px] border-primary-500 text-primary-500 rounded-full text-sm font-bold hover:bg-primary-500 hover:text-white transition-colors">LTR</button>
+            <a href="login.html"
+          class="px-5 py-1.5 border-[1.5px] border-primary-500 text-primary-500 rounded-full text-sm font-semibold hover:bg-primary-500 hover:text-white transition-colors">Login</a>
       </div>
       
       <button id="hamburgerBtn" class="xl:hidden flex flex-col justify-between w-7 h-5 focus:outline-none">
@@ -107,7 +111,6 @@
       <li class="border-b border-gray-200 dark:border-darkBorder"><a href="delivery.html" class="block py-3 text-lg font-medium text-gray-900 dark:text-white">Filter Delivery</a></li>
       <li class="border-b border-gray-200 dark:border-darkBorder"><a href="maintenance.html" class="block py-3 text-lg font-medium text-gray-900 dark:text-white">AC Maintenance</a></li>
       <li class="border-b border-gray-200 dark:border-darkBorder"><a href="booking.html" class="block py-3 text-lg font-bold text-primary-500">Booking</a></li>
-      <li class="border-b border-gray-200 dark:border-darkBorder"><a href="faq.html" class="block py-3 text-lg font-medium text-gray-900 dark:text-white">Faq</a></li>
       <li class="border-b border-gray-200 dark:border-darkBorder"><a href="contact.html" class="block py-3 text-lg font-medium text-gray-900 dark:text-white">Contact</a></li>
       
       <li class="pt-6 pb-2">
@@ -126,7 +129,9 @@
   </div>
 
   <!-- Hero Section -->
-  <section class="relative bg-primary-600 dark:bg-primary-600 py-16 overflow-hidden transition-colors duration-300">
+  <section
+    class="relative py-20 lg:py-28 overflow-hidden bg-cover bg-center bg-fixed"
+    style="background-image: url('images/ac maintenence.jpg');">
     <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
       <div class="absolute top-10 right-10 w-64 h-64 bg-white opacity-10 rounded-full blur-3xl"></div>
       <div class="absolute -bottom-10 left-10 w-64 h-64 bg-black opacity-10 rounded-full blur-2xl"></div>
@@ -134,9 +139,7 @@
     
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
       <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">Book a Service</h1>
-      <p class="text-lg text-primary-50 max-w-2xl mx-auto leading-relaxed">
-        Schedule your automated filter delivery, routine AC tune-up, or dispatch an emergency repair technician directly to your door.
-      </p>
+      
     </div>
   </section>
 
@@ -400,8 +403,17 @@
       
       const darkToggle = document.getElementById('darkToggleBtn');
       const mobileDark = document.getElementById('mobileDarkToggle');
-      if(darkToggle) darkToggle.innerHTML = isDark ? '☀️' : '🌙';
-      if(mobileDark) mobileDark.innerHTML = isDark ? '☀️ Light' : '🌙 Dark';
+     if (darkToggle) {
+    darkToggle.innerHTML = isDark
+        ? '<i class="fa-solid fa-sun"></i>'
+        : '<i class="fa-solid fa-moon"></i>';
+}
+
+if (mobileDark) {
+    mobileDark.innerHTML = isDark
+        ? '<i class="fa-solid fa-sun"></i> Light'
+        : '<i class="fa-solid fa-moon"></i> Dark';
+}
     }
 
     document.getElementById('darkToggleBtn')?.addEventListener('click', () => {
