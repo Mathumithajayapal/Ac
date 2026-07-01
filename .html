@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="transition-colors duration-300">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>AeroHVAC · AC Maintenance | Professional Tune-Ups & Servicing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/jpeg" href="images/favicon.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: { 500: '#0284c7', 600: '#0369a1', 400: '#38bdf8' },
+            darkBg: '#0f0f0f',
+            darkCard: '#1a1a1a',
+            darkBorder: '#2c2c2c'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-100 text-gray-900 dark:bg-darkBg dark:text-white transition-colors duration-300 overflow-x-hidden font-sans">
+
+  <!-- Header -->
+  <header class="sticky top-0 w-full bg-white dark:bg-darkCard shadow-sm z-[1000] transition-colors duration-300">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-3">
+      
+      <a href="index.html" class="flex items-center gap-2 group">
+        <div class="w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center transition-transform group-hover:scale-105">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" class="w-6 h-6">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <span class="text-2xl font-bold tracking-tight text-black dark:text-white">
+          Aero<span class="text-primary-500">HVAC</span>
+        </span>
+      </a>
+      
+      <ul class="hidden xl:flex items-center gap-8">
+        <li class="relative group">
+          <a href="#" class="flex items-center gap-1.5 text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">
+            Home <i class="fa-solid fa-chevron-down text-[10px] transition-transform group-hover:-rotate-180"></i>
+          </a>
+          <ul class="absolute top-full ltr:left-0 rtl:right-0 w-48 bg-white dark:bg-darkCard shadow-lg rounded-xl py-2 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 z-50">
+            <li><a href="index.html" class="block px-5 py-2.5 text-sm text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors">Residential</a></li>
+            <li><a href="home2.html" class="block px-5 py-2.5 text-sm text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors">Commercial</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html" class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">About</a></li>
+        <li><a href="service.html" class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">Services</a></li>
+        <li><a href="delivery.html" class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">Filter Delivery</a></li>
+        <li>
+          <a href="maintenance.html" class="text-primary-500 font-bold py-2 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary-500 after:rounded-full">AC Maintenance</a>
+        </li>
+        <li><a href="booking.html" class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">Booking</a></li>
+        <li><a href="faq.html" class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">Faq</a></li>
+         <li><a href="contact.html" class="text-gray-900 dark:text-white hover:text-primary-500 font-medium py-2 transition-colors">Contact</a></li>
+      </ul>
+      
+      <div class="hidden xl:flex items-center gap-3">
+        <a href="login.html" class="px-5 py-1.5 border-[1.5px] border-primary-500 text-primary-500 rounded-full text-sm font-semibold hover:bg-primary-500 hover:text-white transition-colors">Login</a>
+        <button id="darkToggleBtn" class="w-9 h-9 flex items-center justify-center border-[1.5px] border-primary-500 text-primary-500 rounded-full hover:bg-primary-500 hover:text-white transition-colors">🌙</button>
+        <button id="rtlToggleBtn" class="w-9 h-9 flex items-center justify-center border-[1.5px] border-primary-500 text-primary-500 rounded-full text-sm font-bold hover:bg-primary-500 hover:text-white transition-colors">LTR</button>
+      </div>
+      
+      <button id="hamburgerBtn" class="xl:hidden flex flex-col justify-between w-7 h-5 focus:outline-none">
+        <span class="w-full h-0.5 bg-primary-500 rounded-full"></span>
+        <span class="w-full h-0.5 bg-primary-500 rounded-full"></span>
+        <span class="w-full h-0.5 bg-primary-500 rounded-full"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobileOverlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[998] opacity-0 invisible transition-all duration-300"></div>
+  
+  <div id="mobileMenu" class="fixed top-0 right-0 rtl:right-auto rtl:left-0 h-screen w-[85%] max-w-[400px] bg-white dark:bg-darkCard z-[1001] p-8 pt-20 overflow-y-auto transform translate-x-full rtl:-translate-x-full transition-transform duration-300 shadow-2xl">
+    <button id="closeMenuBtn" class="absolute top-5 right-6 rtl:right-auto rtl:left-6 w-10 h-10 flex items-center justify-center rounded-full text-primary-500 text-2xl hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors">✕</button>
+    
+    <ul class="flex flex-col gap-1">
+      <li class="mobile-dropdown-wrapper border-b border-gray-200 dark:border-darkBorder py-2">
+        <div class="mobile-dropdown-toggle flex justify-between items-center cursor-pointer text-gray-900 dark:text-white text-lg font-medium">
+          <span class="flex items-center gap-2">Home</span>
+          <i class="fa-solid fa-chevron-down text-sm text-primary-500 transition-transform duration-300 dropdown-arrow"></i>
+        </div>
+        <div class="mobile-dropdown-content grid grid-rows-[0fr] transition-all duration-300 ltr:pl-4 rtl:pr-4">
+          <div class="overflow-hidden flex flex-col">
+            <a href="index.html" class="py-2 text-gray-800 dark:text-gray-200 font-medium hover:text-primary-500 mt-2">Residential</a>
+            <a href="home2.html" class="py-2 text-gray-800 dark:text-gray-200 font-medium hover:text-primary-500">Commercial</a>
+          </div>
+        </div>
+      </li>
+      <li class="border-b border-gray-200 dark:border-darkBorder"><a href="about.html" class="block py-3 text-lg font-medium text-gray-900 dark:text-white">About</a></li>
+      <li class="border-b border-gray-200 dark:border-darkBorder"><a href="service.html" class="block py-3 text-lg font-medium text-gray-900 dark:text-white">Services</a></li>
+      <li class="border-b border-gray-200 dark:border-darkBorder"><a href="delivery.html" class="block py-3 text-lg font-medium text-gray-900 dark:text-white">Filter Delivery</a></li>
+      <li class="border-b border-gray-200 dark:border-darkBorder"><a href="maintenance.html" class="block py-3 text-lg font-bold text-primary-500">AC Maintenance</a></li>
+      <li class="border-b border-gray-200 dark:border-darkBorder"><a href="faq.html" class="block py-3 text-lg font-medium text-gray-900 dark:text-white">Faq</a></li>
+      <li class="border-b border-gray-200 dark:border-darkBorder"><a href="booking.html" class="block py-3 text-lg font-medium text-gray-900 dark:text-white">Booking</a></li>
+      <li class="border-b border-gray-200 dark:border-darkBorder"><a href="contact.html" class="block py-3 text-lg font-medium text-gray-900 dark:text-white">Contact</a></li>
+      
+      <li class="pt-6 pb-2">
+        <div class="flex gap-4">
+          <a href="login.html" class="flex-1 text-center py-2.5 rounded-full border-[1.5px] border-primary-500 text-primary-500 font-semibold hover:bg-primary-500 hover:text-white transition-colors">Login</a>
+          <a href="signup.html" class="flex-1 text-center py-2.5 rounded-full bg-primary-500 text-white font-semibold hover:bg-primary-600 transition-colors">Sign Up</a>
+        </div>
+      </li>
+      <li>
+        <div class="flex gap-4">
+          <button id="mobileDarkToggle" class="flex-1 py-2.5 border-[1.5px] border-primary-500 text-primary-500 rounded-full font-medium hover:bg-primary-500 hover:text-white transition-colors">🌙 Dark</button>
+          <button id="mobileRtlToggle" class="flex-1 py-2.5 border-[1.5px] border-primary-500 text-primary-500 rounded-full font-medium hover:bg-primary-500 hover:text-white transition-colors">LTR</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-[50vh] md:min-h-[60vh] flex items-center justify-center overflow-hidden bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&h=800&fit=crop');">
+    <div class="absolute inset-0 bg-slate-900/75"></div>
+    <div class="relative z-10 text-center p-6 md:p-12 w-full max-w-4xl">
+      <span class="text-primary-400 font-bold tracking-[0.2em] uppercase text-sm md:text-base mb-4 block">Expert Climate Care</span>
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight drop-shadow-md">Professional AC Maintenance</h1>
+      <p class="text-lg md:text-xl text-sky-100 max-w-3xl mx-auto leading-relaxed drop-shadow-sm">
+        Extend the life of your unit, lower your energy bills, and prevent costly breakdowns with our comprehensive preventative maintenance plans.
+      </p>
+      <div class="mt-8">
+        <a href="booking.html" class="inline-block px-8 py-4 bg-primary-500 text-white font-bold rounded-full hover:bg-primary-600 hover:-translate-y-1 transition-all shadow-lg text-lg">
+          Schedule Your Tune-Up
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section (4-Image Grid) -->
+  <section class="py-20 lg:py-28 bg-white dark:bg-darkBg transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        
+        <!-- Text Content (Left side on Desktop) -->
+        <div class="order-1">
+          <span class="text-primary-500 font-bold tracking-wider uppercase text-sm mb-2 block">Why Maintenance Matters</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">Stop Breakdowns Before They Happen.</h2>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-8 text-lg">
+            Your HVAC system is one of the most expensive investments in your home. Just like a car, it requires regular tune-ups to run smoothly. Skipping maintenance leads to restricted airflow, strained motors, and eventually, total system failure.
+          </p>
+          
+          <ul class="space-y-6">
+            <li class="flex gap-4">
+              <div class="w-12 h-12 bg-primary-50 dark:bg-primary-500/10 text-primary-500 rounded-full flex items-center justify-center text-xl shrink-0">
+                <i class="fa-solid fa-money-bill-trend-up"></i>
+              </div>
+              <div>
+                <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Lower Energy Bills</h4>
+                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">A clean, well-lubricated system uses significantly less electricity to cool your home, keeping your monthly utility costs down.</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <div class="w-12 h-12 bg-primary-50 dark:bg-primary-500/10 text-primary-500 rounded-full flex items-center justify-center text-xl shrink-0">
+                <i class="fa-solid fa-shield-heart"></i>
+              </div>
+              <div>
+                <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Extend System Lifespan</h4>
+                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">Regular servicing prevents minor wear-and-tear from turning into catastrophic damage, adding years to your unit's life.</p>
+              </div>
+            </li>
+            <li class="flex gap-4">
+              <div class="w-12 h-12 bg-primary-50 dark:bg-primary-500/10 text-primary-500 rounded-full flex items-center justify-center text-xl shrink-0">
+                <i class="fa-solid fa-wind"></i>
+              </div>
+              <div>
+                <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Improve Indoor Air Quality</h4>
+                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">We clear out dust, mold, and debris from your coils and drain lines, ensuring the air circulating in your home is safe and clean.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 4-Image Staggered Grid (Right side on Desktop) -->
+        <div class="relative order-2 z-10 pt-6 sm:pt-0">
+          <!-- Decorative Background Blob -->
+          <div class="absolute -inset-4 bg-primary-500/10 dark:bg-primary-500/5 rounded-[40px] transform -rotate-3 -z-10 hidden sm:block"></div>
+          
+          <!-- Grid Layout -->
+          <div class="grid grid-cols-2 gap-4 sm:gap-5 items-center">
+            
+            <!-- Column 1 (Pushed Down) -->
+            <div class="flex flex-col gap-4 sm:gap-5 transform translate-y-6 sm:translate-y-8">
+              <!-- Image 1 -->
+              <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&h=800&fit=crop" alt="AC Technician" class="rounded-[24px] shadow-lg w-full h-48 sm:h-64 object-cover hover:scale-[1.02] transition-transform duration-300 border-2 border-white dark:border-darkBorder">
+              <!-- Image 2 -->
+              <img src="https://images.unsplash.com/photo-1581094288338-2314dddb3145?w=600&h=600&fit=crop" alt="HVAC Tools" class="rounded-[24px] shadow-lg w-full h-40 sm:h-56 object-cover hover:scale-[1.02] transition-transform duration-300 border-2 border-white dark:border-darkBorder">
+            </div>
+            
+            <!-- Column 2 (Pulled Up) -->
+            <div class="flex flex-col gap-4 sm:gap-5 transform -translate-y-6 sm:-translate-y-8">
+              <!-- Image 3 -->
+              <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=600&h=600&fit=crop" alt="Clean Home" class="rounded-[24px] shadow-lg w-full h-40 sm:h-56 object-cover hover:scale-[1.02] transition-transform duration-300 border-2 border-white dark:border-darkBorder">
+              <!-- Image 4 -->
+              <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&h=800&fit=crop" alt="Filter Change" class="rounded-[24px] shadow-lg w-full h-48 sm:h-64 object-cover hover:scale-[1.02] transition-transform duration-300 border-2 border-white dark:border-darkBorder">
+            </div>
+
+          </div>
+          
+          <!-- Floating Badge -->
+          <div class="absolute -bottom-2 -left-2 sm:-left-8 z-20 bg-white dark:bg-darkCard p-4 sm:p-5 rounded-2xl shadow-xl border border-sky-50 dark:border-darkBorder flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary-50 dark:bg-primary-500/20 text-primary-500 rounded-full flex items-center justify-center text-xl shrink-0">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <div>
+              <div class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Up to 30%</div>
+              <div class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-medium">Energy Savings</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Comprehensive Checklist Section -->
+  <section class="py-20 bg-gray-50 dark:bg-[#141414] transition-colors duration-300 border-y border-sky-100 dark:border-darkBorder">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Our 21-Point Tune-Up Checklist</h2>
+        <p class="text-gray-600 dark:text-gray-400 text-lg">We leave no stone unturned. Every maintenance visit includes a thorough inspection, cleaning, and testing of your entire system.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Checklist Group 1 -->
+        <div class="bg-white dark:bg-darkCard p-8 rounded-3xl shadow-sm border border-sky-100 dark:border-darkBorder hover:-translate-y-1 transition-transform duration-300">
+          <div class="flex items-center gap-3 mb-6 border-b border-gray-100 dark:border-darkBorder pb-4">
+            <i class="fa-solid fa-plug text-primary-500 text-2xl"></i>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Electrical & Controls</h3>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300 text-sm">
+              <i class="fa-solid fa-check text-primary-500 mt-1"></i> Inspect & tighten all wiring connections
+            </li>
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300 text-sm">
+              <i class="fa-solid fa-check text-primary-500 mt-1"></i> Test capacitors & relays
+            </li>
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300 text-sm">
+              <i class="fa-solid fa-check text-primary-500 mt-1"></i> Measure voltage & amperage on motors
+            </li>
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300 text-sm">
+              <i class="fa-solid fa-check text-primary-500 mt-1"></i> Calibrate thermostat settings
+            </li>
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300 text-sm">
+              <i class="fa-solid fa-check text-primary-500 mt-1"></i> Test safety controls and limit switches
+            </li>
+          </ul>
+        </div>
+
+        <!-- Checklist Group 2 -->
+        <div class="bg-white dark:bg-darkCard p-8 rounded-3xl shadow-sm border border-sky-100 dark:border-darkBorder hover:-translate-y-1 transition-transform duration-300">
+          <div class="flex items-center gap-3 mb-6 border-b border-gray-100 dark:border-darkBorder pb-4">
+            <i class="fa-solid fa-snowflake text-primary-500 text-2xl"></i>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Cooling & Airflow</h3>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300 text-sm">
+              <i class="fa-solid fa-check text-primary-500 mt-1"></i> Measure temperature drop across coils
+            </li>
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300 text-sm">
+              <i class="fa-solid fa-check text-primary-500 mt-1"></i> Inspect & clean evaporator coil
+            </li>
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300 text-sm">
+              <i class="fa-solid fa-check text-primary-500 mt-1"></i> Inspect & clean condenser coil
+            </li>
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300 text-sm">
+              <i class="fa-solid fa-check text-primary-500 mt-1"></i> Check refrigerant levels & subcooling
+            </li>
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300 text-sm">
+              <i class="fa-solid fa-check text-primary-500 mt-1"></i> Replace or clean air filters (if subscribed)
+            </li>
+          </ul>
+        </div>
+
+        <!-- Checklist Group 3 -->
+        <div class="bg-white dark:bg-darkCard p-8 rounded-3xl shadow-sm border border-sky-100 dark:border-darkBorder hover:-translate-y-1 transition-transform duration-300">
+          <div class="flex items-center gap-3 mb-6 border-b border-gray-100 dark:border-darkBorder pb-4">
+            <i class="fa-solid fa-droplet text-primary-500 text-2xl"></i>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Mechanical & Drainage</h3>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300 text-sm">
+              <i class="fa-solid fa-check text-primary-500 mt-1"></i> Flush and clear condensate drain line
+            </li>
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300 text-sm">
+              <i class="fa-solid fa-check text-primary-500 mt-1"></i> Inspect drain pan for rust/overflow
+            </li>
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300 text-sm">
+              <i class="fa-solid fa-check text-primary-500 mt-1"></i> Lubricate all moving parts & bearings
+            </li>
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300 text-sm">
+              <i class="fa-solid fa-check text-primary-500 mt-1"></i> Inspect fan motor and blower assembly
+            </li>
+            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-300 text-sm">
+              <i class="fa-solid fa-check text-primary-500 mt-1"></i> Check ductwork for visible leaks
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing / Plans Section -->
+  <section class="py-20 bg-white dark:bg-darkBg transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Transparent Maintenance Plans</h2>
+        <p class="text-gray-600 dark:text-gray-400 text-lg">Choose a one-time tune-up or join our AeroHVAC Comfort Club for year-round protection and free filter delivery.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        
+        <!-- Standard Plan -->
+        <div class="bg-gray-50 dark:bg-darkCard rounded-[32px] p-8 md:p-10 border border-gray-200 dark:border-darkBorder shadow-sm flex flex-col">
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Single Tune-Up</h3>
+            <p class="text-gray-500 dark:text-gray-400 text-sm h-10">Perfect for seasonal preparation. A thorough one-time visit.</p>
+            <div class="mt-6 flex items-baseline gap-2">
+              <span class="text-4xl font-extrabold text-gray-900 dark:text-white">$99</span>
+              <span class="text-gray-500 dark:text-gray-400 font-medium">/visit</span>
+            </div>
+          </div>
+          
+          <ul class="space-y-4 mb-10 flex-grow">
+            <li class="flex gap-3 text-gray-600 dark:text-gray-300">
+              <i class="fa-solid fa-check text-primary-500 mt-1"></i> Full 21-Point Inspection
+            </li>
+            <li class="flex gap-3 text-gray-600 dark:text-gray-300">
+              <i class="fa-solid fa-check text-primary-500 mt-1"></i> Condenser Coil Cleaning
+            </li>
+            <li class="flex gap-3 text-gray-600 dark:text-gray-300">
+              <i class="fa-solid fa-check text-primary-500 mt-1"></i> Condensate Drain Flush
+            </li>
+            <li class="flex gap-3 text-gray-600 dark:text-gray-300">
+              <i class="fa-solid fa-check text-primary-500 mt-1"></i> Refrigerant Level Check
+            </li>
+            <li class="flex gap-3 text-gray-400 dark:text-gray-600 opacity-50">
+              <i class="fa-solid fa-xmark mt-1"></i> No Priority Scheduling
+            </li>
+            <li class="flex gap-3 text-gray-400 dark:text-gray-600 opacity-50">
+              <i class="fa-solid fa-xmark mt-1"></i> No Filter Delivery Included
+            </li>
+          </ul>
+          
+          <a href="booking.html" class="block w-full py-4 text-center rounded-xl font-bold border-2 border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white transition-colors">
+            Book Single Visit
+          </a>
+        </div>
+
+        <!-- Premium Plan -->
+        <div class="bg-primary-600 rounded-[32px] p-8 md:p-10 border border-primary-500 shadow-xl flex flex-col relative overflow-hidden transform md:-translate-y-4">
+          <div class="absolute top-0 right-0 bg-yellow-400 text-yellow-900 text-xs font-bold px-4 py-1.5 rounded-bl-xl uppercase tracking-wider">
+            Most Popular
+          </div>
+          <div class="mb-8 relative z-10">
+            <h3 class="text-2xl font-bold text-white mb-2">Comfort Club Member</h3>
+            <p class="text-primary-100 text-sm h-10">Total peace of mind. Bi-annual tune-ups plus automated filters.</p>
+            <div class="mt-6 flex items-baseline gap-2">
+              <span class="text-4xl font-extrabold text-white">$19</span>
+              <span class="text-primary-100 font-medium">/month</span>
+            </div>
+          </div>
+          
+          <ul class="space-y-4 mb-10 flex-grow relative z-10">
+            <li class="flex gap-3 text-white">
+              <i class="fa-solid fa-check text-yellow-300 mt-1"></i> <strong>Two</strong> 21-Point Inspections (Spring & Fall)
+            </li>
+            <li class="flex gap-3 text-white">
+              <i class="fa-solid fa-check text-yellow-300 mt-1"></i> <strong>FREE</strong> Premium Filter Delivery
+            </li>
+            <li class="flex gap-3 text-white">
+              <i class="fa-solid fa-check text-yellow-300 mt-1"></i> 15% Off All Emergency Repairs
+            </li>
+            <li class="flex gap-3 text-white">
+              <i class="fa-solid fa-check text-yellow-300 mt-1"></i> Priority Front-of-Line Scheduling
+            </li>
+            <li class="flex gap-3 text-white">
+              <i class="fa-solid fa-check text-yellow-300 mt-1"></i> No Overtime Fees on Weekends
+            </li>
+          </ul>
+          
+          <a href="signup.html" class="block w-full py-4 text-center rounded-xl font-bold bg-white text-primary-600 hover:bg-gray-100 transition-colors relative z-10 shadow-md">
+            Join the Club
+          </a>
+          
+          <!-- Decorative BG -->
+          <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-white opacity-10 rounded-full blur-3xl pointer-events-none"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="py-20 bg-gray-50 dark:bg-[#141414] transition-colors duration-300 border-t border-sky-100 dark:border-darkBorder">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">Need Immediate Repair?</h2>
+      <p class="text-gray-600 dark:text-gray-400 text-lg mb-10 max-w-2xl mx-auto">
+        If your AC has completely stopped working, don't wait. Our mobile technicians are available 24/7 for emergency dispatch.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="tel:+918098765432" class="px-8 py-4 bg-primary-500 text-white font-bold rounded-full hover:bg-primary-600 transition-all shadow-md flex items-center justify-center gap-3">
+          <i class="fa-solid fa-phone-volume"></i> Call +91 80 9876 5432
+        </a>
+        <a href="contact.html" class="px-8 py-4 bg-white dark:bg-darkCard border-2 border-gray-200 dark:border-darkBorder text-gray-900 dark:text-white font-bold rounded-full hover:border-primary-500 dark:hover:border-primary-500 transition-all shadow-sm">
+          Send a Message
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-gray-300 pt-16 pb-8 border-t-4 border-primary-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
+      
+      <div class="flex flex-col">
+        <div class="flex items-center gap-2 mb-6">
+          <div class="w-10 h-10 bg-primary-500 rounded-xl flex items-center justify-center">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" class="w-6 h-6">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <span class="text-2xl font-bold text-white">Aero<span class="text-primary-500">HVAC</span></span>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed mb-6">Reliable AC maintenance & seamless filter delivery. Keeping your indoor climate perfect, all year round.</p>
+        <div class="flex gap-4">
+          <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary-500 hover:text-white transition-all hover:-translate-y-1"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary-500 hover:text-white transition-all hover:-translate-y-1"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary-500 hover:text-white transition-all hover:-translate-y-1"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary-500 hover:text-white transition-all hover:-translate-y-1"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      
+      <div>
+        <h4 class="text-white text-base font-semibold tracking-wider uppercase mb-6">QuickLinks</h4>
+        <ul class="flex flex-col gap-3">
+          <li><a href="index.html" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Home</a></li>
+          <li><a href="contact.html" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Contact</a></li>
+          <li><a href="about.html" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">About Us</a></li>
+          <li><a href="service.html" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Services</a></li>
+          <li><a href="signup.html" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Register</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h4 class="text-white text-base font-semibold tracking-wider uppercase mb-6">Connect</h4>
+        <ul class="flex flex-col gap-3">
+          <li><a href="#" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Contact Support</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Service Areas</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Careers</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-primary-500 transition-colors text-sm">Commercial Plans</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h4 class="text-white text-base font-semibold tracking-wider uppercase mb-6">MailBox</h4>
+        <p class="text-gray-400 text-sm mb-4">Subscribe for seasonal maintenance tips & 10% off your first service.</p>
+        <div class="flex items-center border-b border-gray-800 pb-2 focus-within:border-primary-500 transition-colors">
+          <input type="email" placeholder="Your email" class="bg-transparent w-full outline-none text-white text-sm placeholder:text-gray-600">
+          <button class="text-primary-500 font-bold hover:text-primary-400 transition-colors ml-2">→</button>
+        </div>
+      </div>
+      
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-8 border-t border-gray-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+      <span>© 2026 AeroHVAC Services. All rights reserved</span>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-primary-500 transition-colors">Privacy</a>
+        <a href="#" class="hover:text-primary-500 transition-colors">Terms</a>
+        <a href="#" class="hover:text-primary-500 transition-colors">Accessibility</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // --- Dark Mode Logic ---
+    function setDarkMode(isDark) {
+      if(isDark) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      localStorage.setItem('darkMode', isDark);
+      
+      const darkToggle = document.getElementById('darkToggleBtn');
+      const mobileDark = document.getElementById('mobileDarkToggle');
+      if(darkToggle) darkToggle.innerHTML = isDark ? '☀️' : '🌙';
+      if(mobileDark) mobileDark.innerHTML = isDark ? '☀️ Light' : '🌙 Dark';
+    }
+
+    document.getElementById('darkToggleBtn')?.addEventListener('click', () => {
+      setDarkMode(!document.documentElement.classList.contains('dark'));
+    });
+    document.getElementById('mobileDarkToggle')?.addEventListener('click', () => {
+      setDarkMode(!document.documentElement.classList.contains('dark'));
+    });
+    
+    if(localStorage.getItem('darkMode') === 'true') {
+      setDarkMode(true);
+    }
+
+    // --- RTL Logic ---
+    function setRTL(isRTL) {
+      document.documentElement.setAttribute('dir', isRTL ? 'rtl' : 'ltr');
+      localStorage.setItem('rtlMode', isRTL);
+      
+      const rtlToggle = document.getElementById('rtlToggleBtn');
+      const mobileRtl = document.getElementById('mobileRtlToggle');
+      if(rtlToggle) rtlToggle.innerText = isRTL ? 'RTL' : 'LTR';
+      if(mobileRtl) mobileRtl.innerText = isRTL ? 'RTL' : 'LTR';
+    }
+
+    const toggleRtlAction = () => {
+      setRTL(document.documentElement.getAttribute('dir') !== 'rtl');
+    };
+    
+    document.getElementById('rtlToggleBtn')?.addEventListener('click', toggleRtlAction);
+    document.getElementById('mobileRtlToggle')?.addEventListener('click', toggleRtlAction);
+    
+    if(localStorage.getItem('rtlMode') === 'true') {
+      setRTL(true);
+    }
+
+    // --- Mobile Menu Open/Close ---
+    const hamburger = document.getElementById('hamburgerBtn');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+
+    function toggleBodyScroll(lock) {
+      if (lock) document.body.style.overflow = 'hidden';
+      else document.body.style.overflow = '';
+    }
+
+    function openMobileMenu() {
+      mobileOverlay.classList.remove('opacity-0', 'invisible');
+      mobileMenu.classList.remove('translate-x-full', 'rtl:-translate-x-full');
+      mobileMenu.classList.add('translate-x-0', 'rtl:translate-x-0');
+      toggleBodyScroll(true);
+    }
+
+    function closeMobileMenu() {
+      mobileOverlay.classList.add('opacity-0', 'invisible');
+      mobileMenu.classList.add('translate-x-full', 'rtl:-translate-x-full');
+      mobileMenu.classList.remove('translate-x-0', 'rtl:translate-x-0');
+      toggleBodyScroll(false);
+    }
+
+    hamburger?.addEventListener('click', openMobileMenu);
+    closeMenuBtn?.addEventListener('click', closeMobileMenu);
+    mobileOverlay?.addEventListener('click', closeMobileMenu);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !mobileMenu.classList.contains('translate-x-full')) {
+        closeMobileMenu();
+      }
+    });
+
+    // --- Mobile Dropdown Accordion ---
+    const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+    mobileDropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const wrapper = toggle.closest('.mobile-dropdown-wrapper');
+        const content = wrapper.querySelector('.mobile-dropdown-content');
+        const arrow = toggle.querySelector('.dropdown-arrow');
+        
+        const isOpen = content.classList.contains('grid-rows-[1fr]');
+        
+        if (isOpen) {
+          content.classList.replace('grid-rows-[1fr]', 'grid-rows-[0fr]');
+          arrow.classList.remove('-rotate-180');
+        } else {
+          content.classList.replace('grid-rows-[0fr]', 'grid-rows-[1fr]');
+          arrow.classList.add('-rotate-180');
+        }
+      });
+    });
+
+    // --- Form Submit (If Contact Form Exists) ---
+    const contactForm = document.getElementById('contactForm');
+    if(contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('✨ Thank you for reaching out! Our dispatch team will respond shortly. ✨');
+        contactForm.reset();
+      });
+    }
+  </script>
+</body>
+</html>
